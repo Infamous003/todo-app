@@ -6,7 +6,9 @@
 <div class="container-fluid my-5">
     {% if current_user.is_authenticated %}
         <h1>Welcome back, {{ current_user.name }}</h1>
-        
+        <div class="container">
+            <h3>Add task</h3>
+        </div>
     {% else %}
         <h1 class="display-2">Welcome to TodoApp</h1>
         <p class="lead mt-3">Organize your tasks, set goals, and boost productivity—all in one place. TodoApp makes it easy to stay on top of what matters.</p>
