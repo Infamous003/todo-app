@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Sign-up{% endblock %}
+
+{% block content %}
+<div class="container-sm">
+<form method="POST" style="max-width: 550px;margin: 0 auto 0 auto;" class="form-register">
+    {{ form.hidden_tag() }}
+    <legend class="text-body-emphasis" style="text-align: center;">Register now</legend>
+    {{ form.name.label() }}
+    {{ form.name(class="form-control", placeholder="Bruce Wayne") }}
+
+    {{ form.email.label() }}
+    {{ form.email(class="form-control", placeholder="wayne@bats.com") }}
+
+    {{ form.password.label() }}
+    {{ form.password(class="form-control", placeholder="batmobile03") }}
+
+    {{ form.confirm_password.label() }}
+    {{ form.confirm_password(class="form-control", placeholder="batmobile03") }}
+    <br>
+    {{ form.submit(class="btn bg-dark text-light", placeholder="Sign-up") }}
+</form>
+</div>
+{% endblock %}
