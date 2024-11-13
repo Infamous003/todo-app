@@ -4,9 +4,14 @@
 
 {% block content %}
 <div class="container-fluid my-5">
-    <h1 class="display-2">Welcome to TodoApp</h1>
-    <p class="lead mt-3">Organize your tasks, set goals, and boost productivity—all in one place. TodoApp makes it easy to stay on top of what matters.</p>
-    
-    <a href="{{ url_for('signup_page') }}" class="btn btn-success mt-4">Get Started</a>
+    {% if current_user.is_authenticated %}
+        <h1>Welcome back, {{ current_user.name }}</h1>
+        
+    {% else %}
+        <h1 class="display-2">Welcome to TodoApp</h1>
+        <p class="lead mt-3">Organize your tasks, set goals, and boost productivity—all in one place. TodoApp makes it easy to stay on top of what matters.</p>
+        
+        <a href="{{ url_for('signup_page') }}" class="btn btn-success mt-4">Get Started</a>
+    {% endif %}
 </div>
 {% endblock %}

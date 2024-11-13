@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Login Page{% endblock %}
+
+{% block content %}
+<div class="container-sm">
+    <form method="POST" style="max-width: 550px;margin: 0 auto 0 auto;">
+        {{ form.hidden_tag() }}
+        <legend class="text-body-emphasis" style="text-align: center;">Login</legend>
+        {{ form.name.label() }}
+        {{ form.name(class="form-control", placeholder="Bruce Wayne") }}
+
+        {{ form.password.label() }}
+        {{ form.password(class="form-control", placeholder="batmobile03") }}
+        <p>Don't have an account? <a href="{{ url_for('signup_page') }}" class="link-success link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Sign-up</a></p>
+
+        {{ form.submit(class="btn bg-dark text-light", placeholder="Sign-up") }}
+    </form>
+</div>
+{% endblock %}
