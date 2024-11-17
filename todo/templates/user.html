@@ -7,11 +7,12 @@
         <h2>Tasks Pending</h2>
         <ul class="list-group list-group-light">
             {% for task in user_tasks if task.status != 1 %}
+                {% include "includes/modals.html" %}
                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                    {{ task.name|capitalize }}  
+                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">{{ task.name|capitalize }}</button>
                     <span class="align-self-end">
                         <a href="{{ url_for('complete_task', task_id=task.task_id) }}" class="link-opacity-10 link-light">
-                            <span class="badge rounded-pill bg-warning">Mark complete</span>
+                            <span class="badge rounded-pill bg-warning">Mark finish</span>
                         </a>
                         <a href="{{ url_for('remove_task', task_id=task.task_id) }}" class="link-opacity-10 link-light">
                             <span class="badge rounded-pill bg-danger">Remove</span>
@@ -26,8 +27,9 @@
         <h2>Tasks Completed</h2>
         <ul class="list-group list-group-light">
             {% for task in user_tasks if task.status != 0 %}
+            {% include "includes/modals.html" %}
                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                    {{ task.name|capitalize }}
+                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">{{ task.name|capitalize }}</button>
                     <span class="align-self-end">
                         <a class="link-opacity-10 link-light">
                             <span class="badge rounded-pill bg-success">Completed</span>

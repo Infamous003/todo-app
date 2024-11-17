@@ -78,7 +78,7 @@ def create_task_page():
         if task:
             flash("You already have the same task pending.", category="warning")
         else:
-            newTask = Task(name=form.name.data, description=form.name.data, user_id=current_user.user_id)
+            newTask = Task(name=form.name.data, description=form.description.data, user_id=current_user.user_id)
             db.session.add(newTask)
             db.session.commit()
             flash(f"Task added!", category="success")
