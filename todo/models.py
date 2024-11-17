@@ -35,6 +35,7 @@ class Task(db.Model):
     task_id = db.Column(db.Integer(), primary_key=True)
     name = db.Column(db.String(64), nullable=False, unique=True)
     status = db.Column(db.Boolean, default=False, unique=False)
+    description = db.Column(db.String(1024), default="No description")
     created_at = db.Column(db.DateTime, default=datetime.now)
 
     user_id = db.Column(db.Integer(), db.ForeignKey("user.user_id"))

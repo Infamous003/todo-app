@@ -1,9 +1,46 @@
 {% extends "home.html" %}
 
-{% block title %}Welcome back {{ user }}{% endblock %}
+{% block title %}Welcome back {{ user.user_id }}{% endblock %}
 
 {% block content %}
     <div class="container">
-        <h1>Welcome back, {{ user }}</h1>
+        <h2>Tasks Pending</h2>
+        <ul class="list-group list-group-light">
+            {% for task in user_tasks if task.status != 1 %}
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    {{ task.name|capitalize }}  
+                    <span class="align-self-end">
+                        <a href="{{ url_for('complete_task', task_id=task.task_id) }}" class="link-opacity-10 link-light">
+                            <span class="badge rounded-pill bg-warning">Mark complete</span>
+                        </a>
+                        <a href="{{ url_for('remove_task', task_id=task.task_id) }}" class="link-opacity-10 link-light">
+                            <span class="badge rounded-pill bg-danger">Remove</span>
+                        </a>
+                    </span>
+                </li>
+                {% else %}
+                    <p>There are no pending tasks. Great job!</p>
+            {% endfor %}
+        </ul>
+        <hr>
+        <h2>Tasks Completed</h2>
+        <ul class="list-group list-group-light">
+            {% for task in user_tasks if task.status != 0 %}
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    {{ task.name|capitalize }}
+                    <span class="align-self-end">
+                        <a class="link-opacity-10 link-light">
+                            <span class="badge rounded-pill bg-success">Completed</span>
+                        </a>
+
+                        <a href="{{ url_for('remove_task', task_id=task.task_id) }}" class="link-opacity-10 link-light">
+                            <span class="badge rounded-pill bg-danger">Remove</span>
+                        </a>
+                    </span>
+                </li>
+                {% else %}
+                    <p>No completed tasks, what a shame</p>
+            {% endfor %}
+        </ul>
     </div>
 {% endblock %}

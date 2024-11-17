@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Create Task{% endblock %}
+
+{% block content %}
+<div class="container-sm">
+    <form method="POST" style="max-width: 550px;margin: 0 auto 0 auto;" class="form-register">
+        <legend class="text-body-emphasis" style="text-align: center;">Create Task</legend>
+        {{ form.hidden_tag() }}
+    
+        {{ form.name.label() }}
+        {{ form.name(class="form-control", placeholder="Go for a walk") }}
+    
+        {{ form.description.label() }}
+        {{ form.description(class="form-control", rows="4", placeholder="Home...A place where I can go...") }}
+        <br>
+        {{ form.submit(class="btn justify-content-center bg-success text-light", placeholder="Create Task") }}
+    </form>
+</div>
+{% endblock %}
