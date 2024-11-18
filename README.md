@@ -53,4 +53,17 @@ python run.py
 
 ## Screenshots
 
+### Home Page
 ![Home page](todo/assets/images/welcome_page.png)
+
+### Sign-up page
+![Sign-up page](todo/assets/images/signup_page.png)
+
+### Create Tasks Page
+![Create Tasks Page](todo/assets/images/create_task_page.png)
+
+### Tasks Pending
+![Tasks Page](todo/assets/images/tasks_page.png)
+
+### Completed Tasks
+![](todo/assets/images/completed_tasks_page.png)
