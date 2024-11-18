@@ -53,4 +53,4 @@ python run.py
 
 ## Screenshots
 
-![Home page](assets/images/welcome_page.png)
+![Home page](todo/assets/images/welcome_page.png)
