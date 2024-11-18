@@ -39,7 +39,7 @@ source venv/bin/activate
 # On windows use `venv\Scripts\activate`
 ```
 
-4. INstall the required dependencies:
+4. Install the required dependencies:
 ```bash
 pip install -r requirements.txt
 ```
@@ -50,3 +50,7 @@ python run.py
 ```
 
 6. Open http://127.0.0.1:5000/ in your browser to see the app in action!
+
+## Screenshots
+
+![Home page](assets/images/welcome_page.png)
