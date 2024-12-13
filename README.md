@@ -2,6 +2,10 @@
 
 A simple, user-friendly todo list app built with Flask. This app allows users to add, remove, delete and update tasks as complete.
 
+## Live demo
+
+- https://todo-app-aq46.onrender.com/
+
 ## Features
 
 - Sign-up and Sign-in functionality
